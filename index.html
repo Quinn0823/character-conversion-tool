@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="Quinn0823">
+    <meta name="keywords" content="Quinn-Web, Quinn Qiu, Quinn0823, Personal Website">
+    <meta name="description" content="You can convert English and digital characters into any kind of artistic style.">
+
+    <meta name="theme-color" content="#99ccff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#6699cc" media="(prefers-color-scheme: dark)">
+    
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"> -->
+
+    <meta property="og:site_name" content="Quinn-Web">
+    <meta property="og:title" content="Character Conversion Tool">
+    <meta property="og:description" content="You can convert English and digital characters into any kind of artistic style.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://quinn0823.github.io/images/icons/icon-32.png">
+
+    <base href="/">
+    <!-- <base href="/character-conversion-tool/"> -->
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/icons/icon-64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/images/icons/icon-128.png">
+
+    <link rel="stylesheet" type="text/css" href="https://quinn0823.github.io/projects/base/css/page.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/projects/base/css/page.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+
+    <script src="js/project.js"></script>
+    <script src="/js/font_awesome.js" crossorigin="anonymous"></script>
+    
+    <title>Character Conversion Tool</title>
+</head>
+<body>
+    <div id="header"></div>
+    <h3>Input</h3>
+    <input type="text" id="charIn" onchange="charInput()">
+    <span>Preset</span>
+    <button onclick="butA();charInput()">ALL</button>
+    <button onclick="butAD();charInput()">ALL DIGITS</button>
+    <button onclick="butALL();charInput()">ALL LATIN LETTERS</button>
+    <button onclick="butALCL();charInput()">ALL LATIN CAPITAL LETTERS</button>
+    <button onclick="butALSL();charInput()">ALL LATIN SMALL LETTERS</button>
+    <div id="charOut"></div>
+    <div id="footer">
+        <div id="update">Apr. 14, 2024</div>
+        <div id="year">2024</div>
+        <div id="people">Quinn Qiu</div>
+    </div>
+    <script src="https://quinn0823.github.io/projects/base/js/page.js"></script>
+    <!-- <script src="/projects/base/js/page.js"></script> -->
+    <script src="https://quinn0823.github.io/projects/base/js/copy.js"></script>
+    <!-- <script src="/projects/base/js/copy.js"></script> -->
+</body>
