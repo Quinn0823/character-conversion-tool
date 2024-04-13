@@ -1,0 +1,16 @@
+button {
+    margin-top: 10px;
+    padding-left: 10.5px;
+    padding-right: 10.5px;
+    height: 27px;
+    background-color: #fff;
+    border: 3px solid #6699cc;
+    border-radius: 13.5px;
+}
+
+li {
+    word-break: break-all;
+}
+li a {
+    cursor: copy;
+}
