@@ -63,6 +63,8 @@ function toArt(charBef, fontNo, if_, ifCopy) {
                     var charArt = "\\\'";
                 } if(charList[i] == "\"") {
                     var charArt = "\\\"";
+                } else {
+                    var charArt = charList[i];
                 }
             } else {
                 var charArt = charList[i];
