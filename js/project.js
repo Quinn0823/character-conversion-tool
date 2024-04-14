@@ -99,21 +99,26 @@ if(localStorage.laststyle == undefined) {
     localStorage.laststyle = -1;
 }
 
+document.getElementById("output").style.display = "none";
+
 function styledate() {
     if(localStorage.styledate != -1) {
         textFontNo = localStorage.styledate;
+        document.getElementById("bu_7").style.display = "none";
     } else {
         textFontNo = Math.floor(Math.random() * (Char_List.length - 5));
         while(textFontNo == localStorage.laststyle) {
             textFontNo = Math.floor(Math.random() * (Char_List.length - 5));
         }
-    } 
+        document.getElementById("bu_7").style.display = "inline";
+    }
     localStorage.laststyle = textFontNo;
-    var textIdList = ["header_h1", "h3a", "spa", "bua", "bub", "buc", "bud", "bue", "buf1", "buf3", "h3c", "footer_p", "footer_a1", "footer_a2"];
+    var textIdList = ["header_h1", "h3_1", "sp_1", "bu_1", "bu_2", "bu_3", "bu_4", "bu_5", "bu_6a", "h3_2", "p_1", "h3_3", "sp_2", "bu_7", "footer_p", "footer_a1", "footer_a2"];
     if(ifFirst == 1) {
         var opPosi = Number(localStorage.styledate) + 1;
         document.getElementById("style").options[opPosi].selected = true;
-        for(let si = 0; si < textIdList.length; si++) { 
+        for(let si = 0; si < textIdList.length; si++) {
+            // alert(document.getElementById(textIdList[si]).innerHTML);
             window[textIdList[si]] = document.getElementById(textIdList[si]).innerHTML;
         }
         ifFirst = 0;
@@ -121,7 +126,7 @@ function styledate() {
     for(let sj = 0; sj < textIdList.length; sj++) {
         document.getElementById(textIdList[sj]).innerHTML = toArt(eval(textIdList[sj]), textFontNo);
     }
-    document.getElementById("buf2").innerHTML = toArt(usesNow, textFontNo);
+    // document.getElementById("bu_6b").innerHTML = toArt(usesNow, textFontNo);
 }
 
 styledate();
@@ -137,10 +142,18 @@ function charInput() {
             // document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\'" + charResCopy + "\')>" + charRes + "</a></li>";
             document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a class=\"copy_text\" data-clipboard-text=\"" + charResCopy + "\">" + charRes + "</a></li>";
         }
-        document.getElementById("charOut").innerHTML = "<hr><h3>" + toArt("Output", textFontNo) + "</h3><p class='com'>" + toArt("Click to copy.", textFontNo) + "</p><ul>" + document.getElementById("charOut").innerHTML + "</ul>";
+        document.getElementById("charOut").innerHTML = "<ul>" + document.getElementById("charOut").innerHTML + "</ul>";
+
+        document.getElementById("output").style.display = "inline";
+    } else {
+        document.getElementById("output").style.display = "none";
     }
+
 }
 
+function claer(){
+    document.getElementById("charIn").value = "";
+}
 function butA() {
     document.getElementById("charIn").value = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 }
@@ -159,7 +172,8 @@ function butALSL() {
 
 var ifAlert = 0;
 var usesAlert = toArt("The random function will take up a lot of resources because it is rendered in real time.\n\nTo reduce resource consumption, we limit you to " + uses + " uses per visit.\n\nYou can refresh to get more uses.", textFontNo);
-document.getElementById("buf2").innerHTML = toArt(usesNow, textFontNo);
+// document.getElementById("bu_6b").innerHTML = toArt(usesNow, textFontNo);
+
 var rList = [
     "I never miss a beat. I'm lightning on my feet. - Shake It Off by Taylor Swift",
     "Nothing to say when everything gets in the way. - As It Was by Harry Styles",
@@ -173,7 +187,7 @@ var rList = [
 ];
 function butR() {
     if(ifAlert == 0) {
-        alert(usesAlert);
+        // alert(usesAlert);
         ifAlert = 1;
         // if(confirm("The random function will take up a lot of resources because it is rendered in real time. Do you want to continue?") == 1) {
         //     ifAlert = 1;
@@ -187,12 +201,12 @@ function butR() {
             var rValue = rList[rPosi];
         }
         document.getElementById("charIn").value = rValue;
-        usesNow = usesNow - 1;
-        document.getElementById("buf2").innerHTML = toArt(usesNow, textFontNo);
-        if(usesNow == 0) {
-            document.getElementById("buf").className = "black";
-            document.getElementById("buf").removeAttribute ("style");
-        }
+        // usesNow = usesNow - 1;
+        // document.getElementById("bu_6b").innerHTML = toArt(usesNow, textFontNo);
+        // if(usesNow == 0) {
+        //     document.getElementById("bu_6").className = "black";
+        //     document.getElementById("bu_6").removeAttribute ("style");
+        // }
     } else {
         alert(usesAlert);
     }
