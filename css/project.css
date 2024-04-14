@@ -6,7 +6,8 @@ input {
     width: calc(100% - 50px);
     float: left;
 }
-button#bu_c {
+#bu_c {
+    float: left;
     margin-top: 0;
     margin-left: 5px;
     padding: 0;
