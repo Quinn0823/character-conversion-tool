@@ -1,3 +1,3 @@
 # Character Conversion Tool
 
-You can convert English and digital characters into any kind of artistic style.
+You can convert Latin and digital characters into any kind of artistic style.
