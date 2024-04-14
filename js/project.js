@@ -38,10 +38,6 @@ var NEGATIVE_SQUARED = ["🅰", "🅱", "🅲", "🅳", "🅴", "🅵", "🅶", 
 
 var CHAR_LIST = ["Original", "MATHEMATICAL_BOLD", "MATHEMATICAL_ITALIC", "MATHEMATICAL_BOLD_ITALIC", "MATHEMATICAL_SCRIPT", "MATHEMATICAL_BOLD_SCRIPT", "MATHEMATICAL_FRAKTUR", "MATHEMATICAL_BOLD_FRAKTUR", "MATHEMATICAL_DOUBLE_STRUCK", "MATHEMATICAL_SANS_SERIF", "MATHEMATICAL_SANS_SERIF_BOLD", "MATHEMATICAL_SANS_SERIF_ITALIC", "MATHEMATICAL_SANS_SERIF_BOLD_ITALIC", "MATHEMATICAL_MONOSPACE", "PARENTHESIZED", "CIRCLED", "SQUARED", "NEGATIVE_CIRCLED", "NEGATIVE_SQUARED"];
 
-// var str="abcdefg";
-// var pos=str.indexOf("d");
-// alert(pos);//a的位置是0；b的位置是1;.....
-
 function toNorm(artBef) {
     var cList = artBef.split('');
     return(cList);
@@ -56,16 +52,14 @@ function toArt(charBef, fontNo, if_, ifCopy) {
         if(charPosi != -1) {
             var charArt = current[charPosi];
         } else {
-            if(if_ == 1 && charList[i] == "_") {
-                var charArt = " ";
-            } else if(ifCopy == 1) {
-                if(charList[i] == "\'") {
-                    var charArt = "\\\'";
-                } if(charList[i] == "\"") {
-                    var charArt = "\\\"";
-                } else {
-                    var charArt = charList[i];
-                }
+            if(charList[i] == " ") {
+                var charArt = "&nbsp;";
+            } else if(charList[i] == "_" && if_ == 1) {
+                var charArt = "&nbsp;";
+            } else if(charList[i] == "\'" && ifCopy == 1) {
+                var charArt = "&#39;";
+            } if(charList[i] == "\"" && ifCopy == 1) {
+                var charArt = "&quot;";
             } else {
                 var charArt = charList[i];
             }
@@ -83,7 +77,8 @@ function charInput() {
             var charRes = toArt(charInput, a, 0, 0);
             var charResCopy = toArt(charInput, a, 0, 1);
             var fontTitle = toArt(CHAR_LIST[a], a, 1, 0);
-            document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\"" + charResCopy + "\")>" + charRes + "</a></li>";
+            // document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\'" + charResCopy + "\')>" + charRes + "</a></li>";
+            document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a class=\"copy_text\" data-clipboard-text=\"" + charResCopy + "\">" + charRes + "</a></li>";
         }
         document.getElementById("charOut").innerHTML = "<hr><h3>Output</h3><ul>" + document.getElementById("charOut").innerHTML + "</ul>";
     }
