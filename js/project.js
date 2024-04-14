@@ -74,7 +74,7 @@ function charInput() {
             // document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\'" + charResCopy + "\')>" + charRes + "</a></li>";
             document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a class=\"copy_text\" data-clipboard-text=\"" + charResCopy + "\">" + charRes + "</a></li>";
         }
-        document.getElementById("charOut").innerHTML = "<hr><h3>Output</h3><ul>" + document.getElementById("charOut").innerHTML + "</ul>";
+        document.getElementById("charOut").innerHTML = "<hr><h3>Output</h3><p class='com'>Click to copy.</p><ul>" + document.getElementById("charOut").innerHTML + "</ul>";
     }
 }
 
