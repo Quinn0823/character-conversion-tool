@@ -3,9 +3,17 @@ button {
     padding-left: 10.5px;
     padding-right: 10.5px;
     height: 27px;
-    background-color: #fff;
-    border: 3px solid #6699cc;
     border-radius: 13.5px;
+}
+button.black {
+    color: #000;
+    border: 3px solid #000;
+}
+button.black:hover {
+    color: #000;
+    background-color: #fff;
+    border: 3px solid #000;
+    cursor: help;
 }
 
 li {
