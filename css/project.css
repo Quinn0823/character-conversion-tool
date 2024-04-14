@@ -81,6 +81,10 @@ li a {
 #sp_2 {
     margin-right: 5px;
 }
+#p_1 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
 
 .sel {
     position: relative;
