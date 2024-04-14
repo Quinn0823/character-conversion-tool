@@ -70,7 +70,7 @@ function charInput() {
         for (let a = 0; a < CHAR_LIST.length; a++) {
             var charRes = toArt(charInput, a);
             var charResCopy = toArt(charInput, a);
-            var fontTitle = toArt(CHAR_LIST[a].replace("_", " "), a);
+            var fontTitle = toArt(CHAR_LIST[a].replace(/_/g, " "), a);
             // document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\'" + charResCopy + "\')>" + charRes + "</a></li>";
             document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a class=\"copy_text\" data-clipboard-text=\"" + charResCopy + "\">" + charRes + "</a></li>";
         }
