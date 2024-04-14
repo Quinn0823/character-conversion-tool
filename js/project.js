@@ -43,7 +43,7 @@ function toNorm(artBef) {
     return(cList);
 }
 
-function toArt(charBef, fontNo, if_, ifCopy) {
+function toArt(charBef, fontNo) {
     var charList = toNorm(charBef);
     var current = eval(CHAR_LIST[fontNo]);
     var charOut = "";
@@ -54,12 +54,6 @@ function toArt(charBef, fontNo, if_, ifCopy) {
         } else {
             if(charList[i] == " ") {
                 var charArt = "&nbsp;";
-            } else if(charList[i] == "_" && if_ == 1) {
-                var charArt = "&nbsp;";
-            } else if(charList[i] == "\'" && ifCopy == 1) {
-                var charArt = "&#39;";
-            } if(charList[i] == "\"" && ifCopy == 1) {
-                var charArt = "&quot;";
             } else {
                 var charArt = charList[i];
             }
@@ -74,9 +68,9 @@ function charInput() {
     document.getElementById("charOut").innerHTML = "";
     if(charInput != "") {
         for (let a = 0; a < CHAR_LIST.length; a++) {
-            var charRes = toArt(charInput, a, 0, 0);
-            var charResCopy = toArt(charInput, a, 0, 1);
-            var fontTitle = toArt(CHAR_LIST[a], a, 1, 0);
+            var charRes = toArt(charInput, a);
+            var charResCopy = toArt(charInput, a);
+            var fontTitle = toArt(CHAR_LIST[a].replace("_", " "), a);
             // document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a onclick=copy(\'" + charResCopy + "\')>" + charRes + "</a></li>";
             document.getElementById("charOut").innerHTML = document.getElementById("charOut").innerHTML + "<li>" + fontTitle + ": <a class=\"copy_text\" data-clipboard-text=\"" + charResCopy + "\">" + charRes + "</a></li>";
         }
