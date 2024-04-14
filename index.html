@@ -17,42 +17,49 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://quinn0823.github.io/images/icons/icon-32.png">
 
-    <base href="/character-conversion-tool/">
-    <!-- <base href="/"> -->
+    <!-- <base href="/character-conversion-tool/"> -->
+    <base href="/">
     
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/images/icons/icon-64.png">
     <link rel="icon" type="image/png" sizes="128x128" href="/images/icons/icon-128.png">
 
-    <link rel="stylesheet" type="text/css" href="/projects/css/page.css">
-    <!-- <link rel="stylesheet" type="text/css" href="https://quinn0823.github.io/projects/css/page.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/projects/css/page.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://quinn0823.github.io/projects/css/page.css">
     <link rel="stylesheet" type="text/css" href="css/project.css">
 
-    <script src="/projects/packages/node_modules/clipboard/dist/clipboard.min.js"></script>
-    <script src="/js/font_awesome.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://quinn0823.github.io/projects/packages/node_modules/clipboard/dist/clipboard.min.js"></script> -->
-    <!-- <script src="https://quinn0823.github.io/projects/js/font_awesome.js"></script> -->
+    <!-- <script src="/projects/packages/node_modules/clipboard/dist/clipboard.min.js"></script> -->
+    <!-- <script src="/js/font_awesome.js" crossorigin="anonymous"></script> -->
+    <script src="https://quinn0823.github.io/projects/packages/node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script src="https://quinn0823.github.io/js/font_awesome.js"></script>
     
     <title>Character Conversion Tool</title>
 </head>
 <body>
     <div id="header"></div>
-    <h3>Input</h3>
+    <h3 id="h3a">Input</h3>
     <input type="text" id="charIn" onchange="charInput()">
-    <span>Presets</span>
-    <button onclick="butA();charInput()">ALL</button>
-    <button onclick="butAD();charInput()">ALL DIGITS</button>
-    <button onclick="butALL();charInput()">ALL LATIN LETTERS</button>
-    <button onclick="butALCL();charInput()">ALL LATIN CAPITAL LETTERS</button>
-    <button onclick="butALSL();charInput()">ALL LATIN SMALL LETTERS</button>
+    <span id="spa">Presets</span>
+    <button id="bua" onclick="butA();charInput()">All</button>
+    <button id="bub" onclick="butAD();charInput()">All Digits</button>
+    <button id="buc" onclick="butALL();charInput()">All Latin Letters</button>
+    <button id="bud" onclick="butALCL();charInput()">All Latin Capital Letters</button>
+    <button id="bue" onclick="butALSL();charInput()">All Latin Small Letters</button>
+    <button id="buf" onclick="butR();charInput()"><span id="buf1">Random (</span><span id="buf2"></span><span id="buf3">)</span></button>
     <div id="charOut"></div>
+    <hr>
+    <h3 id="h3c">Settings</h3>
+    <select id="style" onchange="stylechange()">
+        <option value="-1">Random</option>
+    </select>
+    <button id="bug" onclick="styledate()">Refresh</button>
     <div id="footer">
         <div id="update">Apr. 14, 2024</div>
         <div id="year">2024</div>
         <div id="people">Quinn Qiu</div>
     </div>
-    <script src="/projects/js/page.js"></script>
-    <!-- <script src="https://quinn0823.github.io/projects/js/page.js"></script> -->
+    <!-- <script src="/projects/js/page.js"></script> -->
+    <script src="https://quinn0823.github.io/projects/js/page.js"></script>
     <script src="js/project.js"></script>
 </body>
