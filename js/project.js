@@ -113,7 +113,7 @@ function styledate() {
         document.getElementById("bu_7").style.display = "inline";
     }
     localStorage.laststyle = textFontNo;
-    var textIdList = ["header_h1", "h3_1", "sp_1", "bu_1", "bu_2", "bu_3", "bu_4", "bu_5", "bu_6a", "h3_2", "p_1", "h3_3", "sp_2", "bu_7", "footer_p", "footer_a1", "footer_a2"];
+    var textIdList = ["header_h1", "h3_1", "sp_1a", "sp_1b", "bu_1", "bu_2", "bu_3", "bu_4", "bu_5", "bu_6a", "h3_2", "p_1", "h3_3", "sp_2", "bu_7", "footer_p", "footer_a1", "footer_a2"];
     if(ifFirst == 1) {
         var opPosi = Number(localStorage.styledate) + 1;
         document.getElementById("style").options[opPosi].selected = true;
