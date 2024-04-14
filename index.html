@@ -47,13 +47,18 @@
             <div class="rl"></div>
         </div>
     </button>
-    <span id="sp_1">Presets</span>
-    <button id="bu_1" onclick="butA();charInput()">All</button>
-    <button id="bu_2" onclick="butAD();charInput()">All Digits</button>
-    <button id="bu_3" onclick="butALL();charInput()">All Latin Letters</button>
-    <button id="bu_4" onclick="butALCL();charInput()">All Latin Capital Letters</button>
-    <button id="bu_5" onclick="butALSL();charInput()">All Latin Small Letters</button>
-    <button id="bu_6" onclick="butR();charInput()"><span id="bu_6a">Random</span><!--  (<span id="bu_6b"></span>) --></button>
+    <div id="presetPC">
+        <span id="sp_1a">Presets</span>
+        <button id="bu_1" onclick="butA();charInput()">All</button>
+        <button id="bu_2" onclick="butAD();charInput()">All Digits</button>
+        <button id="bu_3" onclick="butALL();charInput()">All Latin Letters</button>
+        <button id="bu_4" onclick="butALCL();charInput()">All Latin Capital Letters</button>
+        <button id="bu_5" onclick="butALSL();charInput()">All Latin Small Letters</button>
+        <button id="bu_6" onclick="butR();charInput()"><span id="bu_6a">Random</span><!--  (<span id="bu_6b"></span>) --></button>
+    </div>
+    <div id="presetM">
+        <span id="sp_1b">This function is disabled on the mobile phone because it occupies too much resources!</span>
+    </div>
     <div id="output">
         <hr>
         <h3 id="h3_2">Output</h3>
@@ -75,4 +80,5 @@
     <script src="/projects/js/page.js"></script>
     <!-- <script src="https://quinn0823.github.io/projects/js/page.js"></script> -->
     <script src="js/project.js"></script>
+    <script src="js/device.js"></script>
 </body>
