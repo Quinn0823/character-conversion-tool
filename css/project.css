@@ -6,7 +6,7 @@ input {
     width: calc(100% - 41px);
 }
 button#bu_c {
-    position: fixed;
+    position:absolute;
     margin-top: 0;
     margin-left: 5px;
     padding: 0;
@@ -36,16 +36,16 @@ button#bu_c {
 .cross .rl{
     transform: rotate(45deg);
 }
-button#bu_c:hover .cross .lr,
-button#bu_c:hover .cross .rl {
+#bu_c:hover .cross .lr,
+#bu_c:hover .cross .rl {
     background-color: #fff;
     margin-top: 2.5px;
     height: 25px;
 }
-button#bu_c:hover .cross .lr{
+#bu_c:hover .cross .lr{
     transform: rotate(-135deg);
 }
-button#bu_c:hover .cross .rl{
+#bu_c:hover .cross .rl{
     transform: rotate(135deg);
 }
 
@@ -53,6 +53,7 @@ button {
     margin-top: 5px;
     padding-left: 10.5px;
     padding-right: 10.5px;
+    line-height: 21px;
     height: 27px;
     border-radius: 13.5px;
 }
@@ -74,8 +75,11 @@ li a {
     cursor: copy;
 }
 
-h3#h3_3 {
+#h3_3 {
     margin-bottom: 0;
+}
+#sp_2 {
+    margin-right: 5px;
 }
 
 .sel {
@@ -84,7 +88,7 @@ h3#h3_3 {
 }
 select {
     margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 0;
     padding-left: 10.5px;
     padding-right: 24.5px;
     height: 27px;
@@ -100,10 +104,9 @@ select {
 }
 .sel:after {
     content:"▼";
-    position: absolute;
-    top: 5px;
+    position: relative;
     color: #6699cc;
     line-height: 27px;
     font-size: 14px;
-    right: 10.5px;
+    right: 27px;
 }
